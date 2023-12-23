@@ -1,0 +1,121 @@
+/* Comman css */
+ul{
+    padding:0;
+    margin-left: 20px;
+}
+
+/* Navbar */
+.navbar-header{
+    background-image: url('../images/header-bg.png');
+    width:100%;
+    height:1100px;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+.navbar-header .logo-img{
+    z-index:1;
+    padding-top: 250px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left:25% !important;
+    width:1550px !important;
+}
+.navbar-header img{
+    position: relative;
+    z-index:1;
+}
+.navbar-header .char-img{
+    width: 170px !important;
+    position: absolute !important;
+    top: 40% !important;
+    left: 45% !important;
+    z-index: 4 !important;
+}
+.navbar-header .char-img3{
+    width: 130px !important;
+    position: absolute;
+    top: 55% !important;
+    margin-left: 170px;
+}
+.navbar-header .char-img-3{
+    width: 120px !important;
+    top:88% !important;
+    margin-left: 270px;
+    position: absolute;
+    z-index: 7 !important;
+}
+.navbar-header .char-img-4{
+    width: 170px;
+    top: 45% !important;
+    margin-left: 330px;
+    position: absolute;
+}
+.navbar-header .char-img-5{
+    width: 206px;
+    top: 70% !important;
+    margin-left: 430px;
+    position: absolute;
+}
+.navbar-header .char-img-6{
+    width: 65px;
+    top: 40% !important;
+    right:12% !important;
+    position: absolute;
+    z-index: 6 !important;
+}
+.navbar-header .char-img-7{
+    width: 78px !important;
+    position: absolute;
+    top: 80% !important;
+    left:43% !important;
+    z-index: 9;
+}
+.navbar-header .char-img-8{
+    width: 65px;
+    top: 58%;
+    position: absolute;
+    left: 34% !important;
+    z-index: 9 !important;
+
+}
+.navbar-header .charecters{
+    position: relative;
+    z-index:9;
+}
+.navbar-header .char-img{
+    width: 200px;
+}
+.navbar-header .laptop-img{
+    position: absolute;
+    z-index: 999;
+    bottom:0;
+    right:0;
+}
+.laptop-img img{
+    width:700px;
+    margin-right:100px;
+}
+.hide{
+    opacity: 0;
+}
+.show{
+    opacity:1;
+}
+.section-2 .content-head{
+    font-family: 'Neue Machina' !important;
+    font-weight: 900;
+}
+
+.section-2 .btn-primary{
+    background-color: #fff;
+    color:#000;
+    border:none;
+    padding:10px 50px;
+    font-weight: 700;
+}
+.section-2 .btn-primary img{
+    width:30px;
+}

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gamesta</title>
+    <!-- faviocn -->
+    <link rel="shortcut icon" href="images/faviocon.png" type="image/x-icon">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font/NeueMachina-Ultrabold.woff2">
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- ao scroll animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header --> 
+   <section class="navbar-header py-5 text-center">
+    <div class="charecters text-center smooth-scroll"  max="100" value="0">
+      <div class="d-flex justify-content-center container">
+         <div class="move" >
+          <img src="images/logo.png" alt="logo" class="logo-img logo-move ">
+         </div>
+      </div>
+      <div>
+        <img src="images/char8.png" alt="" class="char-img-8 " id="moveBird" >
+      </div>
+      <div>
+        <img src="images/char7.png" alt="" class="char-img-7">
+      </div>
+      <div>
+        <div class="move2">
+          <img src="images/char1.png" alt="" class="char-img2 box char-img" id="pin2">
+        </div>
+      </div>  
+      <div>
+        <div class="move-3">
+          <img src="images/char2.png" alt="" class="char-img3 char-img2">
+        </div>
+      </div>
+      <div class="move-4">
+      <img src="images/char-3.png" alt="" class="char-img-3">
+      </div>
+      <div class="move-5">
+      <img src="images/char4.png" alt="" class="char-img-4 char-img2">
+      </div>
+      <div class="move-6">
+      <img src="images/char5.png" alt="" class="char-img-5">
+      </div>
+      <div> 
+      <img src="images/char6.png" alt="" class="char-img-6 " id="moveBird2">
+      </div>
+     </div>
+     <div class="laptop-img">
+        <img src="images/laptop.png" alt="laptop" class="laptop laptop-up hide" id="laptopshow">
+     </div>
+   </section>
+<script>
+  AOS.init();
+
+// logo Move
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".move",
+    start: "center bottom",
+    end: "center top",
+    scrub: true,
+    duration:2,
+    scrub:-1,
+    // markers: true
+  }
+});
+
+gsap.to('.logo-move',{
+  scrollTrigger: {
+    trigger: '.logo-move',
+    start: 'top bottom',
+    end: 'top 700',
+    left:100,
+    scrub: true,
+    scrub:0.7,
+    // markers:true,
+  }
+});
+tl.to(".logo-move", {duration: 1})
+gsap.to('.logo-move', {
+  x: -1050,  
+  y:100,
+  scale:0.1,
+  scrollTrigger: {
+    trigger: '.logo-move',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+    transition:'2s'
+  }
+});
+
+// object Move 2
+
+const tl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img',{
+  y:350,
+  x:40,
+  scale:1.4,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:0.4,
+    // markers:true,
+  }
+});
+tl2.to(".char-img", {duration: 1})
+
+gsap.to('.char-img', {
+
+  scrollTrigger: {
+    trigger: '.logo-move',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+    scrub:-2
+  }
+});
+
+// object Move 3
+
+const tl4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img3',{
+  y:300,
+  x:10,
+  scale:1.4,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:0.4,
+    // markers:true,
+  }
+});
+tl2.to(".char-img3", {duration: 1})
+
+gsap.to('.char-img3', {
+
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+    scrub:1,
+  }
+});
+
+// object Move 5
+
+const tl5= gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img-3',{
+  y:150,
+  x:10,
+  scale:1.6,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:0.3,
+    // markers:true,
+  }
+});
+tl2.to(".char-img-3", {duration: 1})
+
+gsap.to('.char-img-3', {
+
+  scrollTrigger: {
+    trigger: '.logo-move',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+// object Move 6
+
+const tl6= gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img-4',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img-4',{
+  y:285,
+  x:65,
+  scale:1.4,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:0.5,
+    // markers:true,
+  }
+});
+tl2.to(".char-img-4", {duration: 1})
+
+gsap.to('.char-img-4', {
+
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+    scrub:0.5,
+  }
+});
+
+// object Move 7
+
+const tl7= gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img-5',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img-5',{
+  y:330,
+  x:140,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:0.5,
+    // markers:true,
+  }
+});
+
+tl7.to(".char-img-5", {scale:1.15,duration: 1,})
+tl7.to(".char-img-5",{scale:0.7,duration: 1,})
+
+gsap.to('.char-img-5', {
+
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+// object Move 8
+
+const tl8= gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img-7',{
+  y:400,
+  x:70,
+  scale:1.5,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:0.5,
+    // markers:true,
+  }
+}); 
+
+tl8.to(".char-img-7", {duration: 1,})
+
+gsap.to('.char-img-7', {
+
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+// Birds move 
+
+const tl9= gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img-8',{
+  y:200,
+  x:450,
+  scale:1.5,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=50',
+    end: 'top +=600',
+    left:100,
+    scrub: true,
+    scrub:0.5,
+    // markers:true,
+  }
+}); 
+
+tl9.to(".char-img-8", {duration: 1,})
+
+gsap.to('.char-img-8', {
+
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+    scrub:1,
+  }
+});
+
+// Bird-2
+
+const tl10= gsap.timeline({
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=500',
+    left:100,
+    scrub: true,
+    scrub:1,
+    // markers:true,
+  }
+});
+
+gsap.to('.char-img-6',{
+  y:290,
+  x:-400,
+  scale:1.8,
+  scrollTrigger: {
+    trigger: '.char-img',
+    start: 'top +=100',
+    end: 'top +=600',
+    left:100,
+    scrub: true,
+    scrub:0.6,
+    // markers:true,
+  }
+}); 
+
+tl10.to(".char-img-6", {duration: 1,})
+
+gsap.to('.char-img-6', {
+
+  scrollTrigger: {
+    x:-100,
+    trigger: '.char-img',
+    start: 'center center',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+
+  // laptop
+  myID = document.getElementById("laptopshow");
+
+var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= 50) {
+        myID.className = "laptop-up show"
+    } else {
+        myID.className = "laptop-up hide"
+    }
+};
+
+window.addEventListener("scroll", myScrollFunc);
+
+$(window).on("scroll", function() {
+    var s = 700 - Math.min(400, $(document).scrollTop());
+    $(".gamesta-img").width(s).height(s);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.to('.smooth-scroll', {
+  value: 100,
+  ease: 'none',
+  scrollTrigger: { scrub: 1 }
+});
+
+</script>
+</body>
+</html> 
